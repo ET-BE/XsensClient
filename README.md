@@ -28,12 +28,12 @@ After installing this library, include it into your CMake application with:
 
 ```cmake
 find_package(XsensClient)
-target_link_libraries(application XsensClient::XsensClient)
+target_link_libraries(application Xsens::XsensClient)
 ```
 
 Or you are only interested in the Xsens SDK itself:
 
 ```cmake
 find_package(XsensClient)
-target_link_libraries(application XsensSDK::XsensSDK)
+target_link_libraries(application Xsens::XsensSDK)
 ```

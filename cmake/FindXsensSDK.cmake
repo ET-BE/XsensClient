@@ -5,7 +5,7 @@
 #       `XsensSDK_ROOT` (Optional): Set to the install directory of the SDK
 #
 # Outputs:
-#       `XsensSDK::XsensSDK` target
+#       `Xsens::XsensSDK` target
 #
 
 if (NOT XsensSDK_ROOT AND NOT XsensSDK_INCLUDE_DIR)
@@ -51,13 +51,13 @@ if (XsensSDK_FOUND)
     set(XsensSDK_LIBRARIES "${XsensSDK_LIBRARY}")
 
     # For header-only libraries
-    if (NOT TARGET XsensSDK::XsensSDK)
-        add_library(XsensSDK::XsensSDK UNKNOWN IMPORTED)
+    if (NOT TARGET Xsens::XsensSDK)
+        add_library(Xsens::XsensSDK UNKNOWN IMPORTED)
 
-        set_target_properties(XsensSDK::XsensSDK PROPERTIES
+        set_target_properties(Xsens::XsensSDK PROPERTIES
                 INTERFACE_INCLUDE_DIRECTORIES "${XsensSDK_INCLUDE_DIRS}")
 
-        set_target_properties(XsensSDK::XsensSDK PROPERTIES
+        set_target_properties(Xsens::XsensSDK PROPERTIES
                 IMPORTED_LINK_INTERFACE_LANGUAGES "CXX"
                 IMPORTED_LOCATION "${XsensSDK_LIBRARY}")
     endif ()

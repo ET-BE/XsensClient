@@ -1,2 +1,7 @@
 add_executable(example mainXsens.cpp)
-target_link_libraries(example XsensClient::XsensClient)
+
+if(NOT TARGET Xsens::XsensClient)
+    find_package(XsensClient)
+endif()
+
+target_link_libraries(example Xsens::XsensClient)
