@@ -3,9 +3,9 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 
 option(BUILD_EXAMPLE "Enable to also build the example application" OFF)
 
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-find_package(XsensSDK)
+find_package(XsensSDK REQUIRED)
 
 add_subdirectory(src)
 if(BUILD_EXAMPLE)
@@ -40,5 +40,5 @@ configure_package_config_file(cmake/XsensClient-config.cmake.in
         PATH_VARS CMAKE_INSTALL_INCLUDEDIR)
 
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/XsensClient-config.cmake"
-        "${CMAKE_SOURCE_DIR}/cmake/FindXsensSDK.cmake"
+        "${CMAKE_CURRENT_SOURCE_DIR}/cmake/FindXsensSDK.cmake"
         DESTINATION ${ConfigPackageLocation})
